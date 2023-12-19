@@ -1,0 +1,69 @@
+ 
+{% extends 'index.html'%}
+
+
+
+
+{% block body%}
+      
+<section class="main-area">
+    <div class="main-header--scetionqc">
+        <span class="main-header-qc">Download Quality Certificate</span>
+        <div class="logout-area-qc">
+            <div class="user-qc">Hi, {{data}}</div>
+
+            <a href="{% url 'web:logout' %}" class="logout-btn">
+            <span style="padding-right: 5px;">Log out</span>
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+
+        </a>
+    </div>
+    </div>
+<hr>
+
+        <form class="search-barqc-from" method="GET" action="{% url 'web:downloads' %}">
+            {% csrf_token %}
+            <input class="input-bar-qc" type="text" placeholder="Enter your Lot No ..." name="search-qc">
+                <button type="submit" class="input-btn-qc">
+                <i style="padding-right: 5px;font-size: 14px;" class="fa fa-search"></i>
+                <span style="font-family: Open Sans; font-weight: bold;font-size: 14px;"> Search</span>
+            </button>
+        </form>
+    </section>
+    <section class="body-section-qc">
+        <div class="body-section-qc-div">
+        <p>
+
+            You can download the Quality certificate  
+               
+        <i class="fas fa-hand-point-up" style="color: green;font-size: 20px; margin-left: 10px;"></i>
+        </p>     
+        <i class="fa fa-hand-o-up" aria-hidden="true"></i>
+            </div>
+              <div class="main-dwn-qc">   
+                            {% if data_searched == 'Nothing Found'%}
+                                  
+                            <h5 style="color: #326da8; text-align: center;">Nothing Found !<h5>
+                            
+                                {%else%}
+
+                                    <ul style="list-style-type: circle;">
+
+                                        <li>
+                                            <span style="color: #326da8; font-size: 24px;">
+                                                <a href="{% url 'web:pdf_download' data_searched  %}" style="text-decoration: solid;" href="">{{data_searched}}
+                                                <span style="padding-left:10px ;">
+                                                    <i style="padding-right: 10px;" class="fa fa-download" aria-hidden="true"></i>
+                                                    <i class="fa-solid fa-file-pdf"></i>
+                                                    </span>
+                                                </a>
+                                         </span>
+                                        </li>
+                                    </ul>
+                                
+                            {%endif%}
+                     </span>
+            
+                </div>
+    </section>
+{%endblock%}

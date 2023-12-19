@@ -1,0 +1,143 @@
+.slider-content__btn .tp-btn {
+  background-color: #2a643b;
+}
+.slider-content__btn .tp-btn::after {
+  content: "";
+  height: 300px;
+  width: 300px;
+  background-color: #0f581b;
+  border: 1px solid #0f581b;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%) scale(0);
+  transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: -1;
+}
+.slider-content__btn .tp-btn:hover {
+  color: #fff;
+}
+.slider-content__btn .tp-btn:hover::after {
+  transform: translateY(-50%) translateX(-50%) scale(1);
+}
+.slider-content__btn .tp-btn-second {
+  background: none;
+  border: 1px solid #0f581b;
+  color: #0f581b;
+}
+.slider-content__btn .tp-btn-second::after {
+  content: "";
+  height: 300px;
+  width: 300px;
+  background-color: #13D9A8;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%) scale(0);
+  transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: -1;
+}
+
+.tp-section .tp-section__sub-title {
+  color: #0f581b;
+}
+.tp-section .left-line {
+  position: relative;
+}
+.tp-section .left-line::before {
+  content: "";
+  width: 35px;
+  height: 2px;
+  background-color: #0f581b;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.breadcrumb__area {
+  padding: 200px 0;
+}
+.breadcrumb__overlay {
+  position: relative;
+  z-index: 1;
+  margin-top: -2px;
+}
+.breadcrumb__overlay::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #2a643b;
+  z-index: -1;
+}
+
+.contactform__input .tp-btn {
+  background-color: #0f581b;
+}
+
+.theme-bg {
+  background-color: #0f581b;
+}
+
+.about-content__btn .tp-btn {
+  background-color: #0f581b;
+}
+
+.counter-area {
+  background-color: #2a643b;
+}
+.counter-area .tp-section__sub-title {
+  color: #fff;
+}
+.counter-area .tp-section__sub-title::before {
+  background-color: #fff;
+}
+.counter-area .tp-section__title {
+  color: #fff;
+}
+.counter-area .counter__content p {
+  color: #fff;
+}
+.counter-area .counter__content h4 {
+  color: #fff;
+}
+.counter-area .counter__content h5 {
+  color: #fff;
+}
+
+.tpsideinfo {
+  background-color: #000000;
+}
+
+.basic-pagination ul li span.current {
+  background: #0f581b;
+  border-color: #0f581b;
+}
+
+.team-item__thumb h4 {
+  color: #000000;
+  margin-top: 0.3rem;
+  font-weight: 400;
+}
+
+.tp-breadcrumb .tp-breadcrumb__title {
+  font-size: 30px !important;
+}
+
+.breadcrumb__area {
+  padding: 145px 0 !important;
+}
+
+.services-link span a {
+  color: #0f581b !important;
+}/*# sourceMappingURL=custom.css.map */
+
+
+
+
+
+
+

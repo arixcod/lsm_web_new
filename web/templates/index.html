@@ -1,0 +1,755 @@
+{%load static%}
+
+{% block doctype %}<!DOCTYPE html>{% endblock %}
+
+{% block head %}
+
+<html class="no-js" lang="zxx">
+  
+      <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title>Laboratory & Science Research</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Place favicon.ico in the root directory -->
+      <!-- <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png"> -->
+
+      <!-- CSS here -->
+
+
+      
+      <link rel="stylesheet" href="{%static 'assets/css/bootstrap.min.css' %}">
+      <link rel="stylesheet" href="{%static 'assets/css/animate.css' %}">
+      <link rel="stylesheet" href="{%static 'assets/css/swiper-bundle.css' %}">
+      <link rel="stylesheet" href="{%static 'assets/css/slick.css' %}">
+      <link rel="stylesheet" href="{%static 'assets/css/aos.css' %}">
+      <link rel="stylesheet" href="{%static 'assets/css/magnific-popup.css' %}">
+      <link rel="stylesheet" href="{%static 'assets/css/font-awesome-pro.css' %}">
+      <link rel="stylesheet" href="{%static 'assets/css/flaticon.css' %}">
+      <link rel="stylesheet" href="{%static 'assets/css/spacing.css' %}">
+      <link rel="stylesheet" href="{%static 'assets/css/nice-select.css' %}">
+      <link rel="stylesheet" href="{%static 'assets/css/meanmenu.css' %}">
+      <link rel="stylesheet" href="{%static 'assets/css/style.css' %}">
+      <link rel="stylesheet" href="{%static 'assets/css/custom.css' %}">
+      <link rel="stylesheet" href="{%static 'assets/download_css/app.css' %}">
+      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+      {% endblock %}
+      
+
+   </head>
+   <body>
+   
+
+      <!-- Scroll-top -->
+      <button class="scroll-top scroll-to-target" data-target="html">
+         <i class="fas fa-angle-up"></i>
+      </button>
+      <!-- Scroll-top-end-->   
+            
+
+          <!-- header-area -->
+          <header class="d-none d-xl-block">
+            <div class="header-custom" id="header-sticky">
+               <div class="header-logo-box">
+                  <a href="{% url 'web:index' %}"><img src="{% static 'assets/img/logo/logo.png' %}" alt="logo"></a>
+               </div>
+               <div class="header-menu-box">
+                  <div class="header-menu-top">
+                     <div class="row align-items-center">
+                        <div class="col-lg-4">
+                           <div class="header-top-mob">
+                              <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="#2c653e"/><circle cx="7" cy="2" r="2" fill="#2c653e"/><circle cx="12" cy="2" r="2" fill="#2c653e"/><circle cx="12" cy="7" r="2" fill="#2c653e"/><circle cx="12" cy="12" r="2" fill="#2c653e"/><circle cx="7" cy="7" r="2" fill="#2c653e"/><circle cx="7" cy="12" r="2" fill="#2c653e"/><circle cx="7" cy="17" r="2" fill="#2c653e"/><circle cx="2" cy="7" r="2" fill="#2c653e"/><circle cx="2" cy="12" r="2" fill="#2c653e"/></svg>
+                              <span>Contact Us :</span>
+                              <a href="tel:+9159008855"> +91 590 088 55 </a>
+                           </div>
+                        </div>
+                        <div class="col-lg-8">
+                           <div class="header-time">
+                              <span><i class="fa-solid fa-location-dot"></i> 4th Floor, Plot No-3, Rishi Kunj
+                                 Kirti Nagar, Sec-15 Part 1
+                                 Gurugram Haryana, 122001
+                                 </span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="header-menu-bottom">
+                     <div class="row">
+                        <div class="col-lg-7">
+                           <div class="main-menu main-menu-second">
+                              <nav id="mobile-menu">
+                                 <ul>
+                                    <li><a href="{% url 'web:index' %}">Home</a></li>
+                                    <li><a href="{% url 'web:about' %}">about</a></li>
+                                    <li><a href="{% url 'web:products' %}">product</a></li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="{% url 'web:contact' %}">Contact</a></li>
+                                    <li><a href="{% url 'web:downloads' %}">Downloads</a></li>
+                                   
+                                 </ul>
+                              </nav>
+                           </div>
+                        </div>
+
+                           <div class="col-lg-5">
+
+                           
+                           </div>
+                     
+                     </div>
+                            
+                  </div>
+               </div>
+            </div>
+         </header>
+
+            <!-- header-area-end -->  
+      
+            <!-- tp-mobile-header-area start -->
+      <div id="header-mob-sticky" class="tp-mobile-header-area pt-15 pb-15 d-xl-none">
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-md-4 col-10">
+                  <div class="tp-mob-logo">
+                     <a href="{% url 'web:index' %}"><img src="{% static 'assets/img/logo/logo.png' %}" alt="logo"></a>
+                  </div>
+               </div>
+               <div class="col-md-8 col-2">
+                  <div class="tp-mobile-bar d-flex align-items-center justify-content-end">
+                     <div class="tp-bt-btn-banner d-none d-md-block d-xl-none mr-30">
+                        <a class="tp-bt-btn" href="tel:123456">
+                           <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="#0E63FF"/><circle cx="7" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="7" r="2" fill="#0E63FF"/><circle cx="12" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="7" r="2" fill="#0E63FF"/><circle cx="7" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="17" r="2" fill="#0E63FF"/><circle cx="2" cy="7" r="2" fill="#0E63FF"/><circle cx="2" cy="12" r="2" fill="#0E63FF"/></svg><span>Help Desk :</span>+91 590 088 55
+                        </a>
+                     </div>
+                     <button class="tp-menu-toggle"><i class="far fa-bars"></i></button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- tp-mobile-header-area end -->
+
+      <!-- sidebar-info -->
+      <div class="tpsideinfo tp-side-info-area">
+         <button class="tpsideinfo__close"><i class="fal fa-times"></i></button>
+         <div class="tpsideinfo__logo mb-40">
+            <a href="{% url 'web:index' %}"><img src="{% static 'assets/img/logo/logo.png' %}" alt="logo"></a>
+         </div>
+
+         <div class="mobile-menu"></div>
+
+      
+         <div class="tpsideinfo__content-inputarea mb-60 d-none d-xl-block">
+            <span>Get Update</span>
+            <div class="tpsideinfo__content-inputarea-input">
+               <form action="#">
+                  <input type="email" placeholder="Enter Mail">
+                  <button class="tpsideinfo__content-inputarea-input-btn"><i class="fa-solid fa-paper-plane"></i></button>
+               </form>
+            </div>
+         </div>
+         <div class="tpsideinfo__gallery mb-35 d-none d-xl-block">
+            <span>Cheack Instagram Post</span>
+            <div class="tpsideinfo__gallery-item">
+               <a href="{% static 'assets/img/blog/blog-in-01.jpg' %}" class="popup-image"><img src="{% static 'assets/img/blog/blog-in-01.jpg' %}" alt=""></a>
+               <a href="{% static 'assets/img/blog/blog-in-02.jpg' %}" class="popup-image"><img src="{% static 'assets/img/blog/blog-in-02.jpg' %}" alt=""></a>
+               <a href="{% static 'assets/img/blog/blog-in-03.jpg' %}" class="popup-image"><img src="{% static 'assets/img/blog/blog-in-03.jpg' %}" alt=""></a>
+            </div>
+         </div>
+         <div class="tpsideinfo__socialicon">
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-skype"></i></a>
+         </div>
+      </div>
+
+<!-- Above This commaon layout for All the [pages] -->
+
+<!-- MVT injection starts here ... -->
+
+      {% block body%}
+
+        <!-- sidebar-info-end -->
+
+      <div class="body-overlay"></div>            
+      
+      <!-- main-area -->
+      <main>
+
+         <!-- slider-arae -->
+         <section class="slider-area slider-tp-top pt-100 p-relative">
+            <div class="slider-social">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-6 col-md-10 d-none d-md-block">
+                        <div class="slider-content__social">
+                           <a class="facebook-2" href="#"><i class="fab fa-facebook-f"></i>Facebook</a>
+                           <a class="youtub-2" href="#"><i class="fab fa-youtube"></i>Youtube</a>
+                           <a class="twitter-2" href="#"><i class="fab fa-twitter"></i>Twitter</a>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-md-2 col-12 d-none d-md-block">
+                        <div class="slider-content__arrow d-flex align-items-center">
+                           <div class="slider-p"><i class="fa-regular fa-arrow-left"></i></div>
+                           <div class="slider-n"><i class="fa-regular fa-arrow-right"></i></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="swiper-container tp-slider slider-active">
+               <div class="swiper-wrapper">
+                  <div class="swiper-slide bg-white">
+                     <div class="container">
+                        <div class="row align-items-center">
+                           <div class="col-lg-6 col-md-12 col-12 order-2 order-lg-1">
+                              <div class="slider-content pt-60">
+                                 <h2 class="slider-content__title mb-45">Our Passion is to <br> Give you Better <br> Service</h2>
+                                 <p>Your full service lab for clinical trials. Our mission is to ensure the <br> generation of accurate and precise findings</p>
+                                 <div class="slider-content__btn mb-165">
+                                    <a class="tp-btn" href="contact.html">Contact Us</a>
+                                    <a class="tp-btn-second ml-25" href="about.html">About us</a>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6 col-md-6 col-12 order-1 order-lg-2">
+                              <div class="slider-content__bg">
+                                 <img src="{% static 'assets/img/slider/banner3.png' %}" alt="slider-img">
+                              </div>
+                              <div class="slider-content__shape d-none d-md-block">
+                                 <img src="{% static 'assets/img/slider/banner4.png' %}" alt="slider-shape">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="swiper-slide bg-white">
+                     <div class="container">
+                        <div class="row align-items-center">
+                           <div class="col-lg-6 col-md-12 col-12 order-2 order-lg-1">
+                              <div class="slider-content pt-60">
+                                 <h2 class="slider-content__title mb-45">Our Passion is to <br> Give you Better <br> Service</h2>
+                                 <p>Your full service lab for clinical trials. Our mission is to ensure the <br> generation of accurate and precise findings</p>
+                                 <div class="slider-content__btn mb-165">
+                                    <a class="tp-btn" href="{% url 'web:contact' %}">Contact Us</a>
+                                    <a class="tp-btn-second ml-25" href="{% url 'web:about' %}">About us</a>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6 col-md-6 col-12 order-1 order-lg-2">
+                              <div class="slider-content__bg">
+                                 <img src="{% static 'assets/img/slider/banner3.png' %}" alt="slider-img">
+                              </div>
+                              <div class="slider-content__shape d-none d-md-block">
+                                 <img src="{% static 'assets/img/slider/banner4.png' %}" alt="slider-shape">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- slider-arae-end -->
+
+         <!-- about-area -->
+         <section class="about-area grey-bg pt-130 tp-box-space pb-130 ml-30 mr-30" data-background="{% static 'assets/img/shape/shape-bg-05.png' %}">
+            <div class="about-wrapper">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-xl-6 col-lg-12 col-12">
+                        <div class="about-thumb text-lg-center p-relative ml-85 mb-60 wow fadeInLeft" data-wow-delay=".3s">
+                           <img src="{% static 'assets/img/about/about.png' %}" alt="about-thumb">
+                           <div class="about-thumb-shape d-none d-md-block">
+                              <img src="{% static 'assets/img/about/abt.png' %}" alt="about-shape">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-6 col-lg-12 col-12">
+                        <div class="about-content ml-60 mb-60 wow fadeInRight" data-wow-delay=".3s">
+                           <div class="tp-section">
+                              <span class="tp-section__sub-title left-line mb-25">An Overview</span>
+                              <h3 class="tp-section__title mb-45">LifeScience Media</h3>
+                              <i>Embarking on Microbial Explorations: Unveiling the Wonders Within</i>
+                              <p class=" mr-20 mb-35">Welcome to our cutting-edge Microbiology Lab, established in 2018, where scientific curiosity converges with innovation. Dedicated to crafting specialized media plates, we delve into the intricate world of microorganisms, providing a platform for diverse studies and discoveries in the realm of biosciences..
+
+                              </p>
+                           </div>
+                           <div class="about-content__btn"><a href="{% url 'web:about' %}" class="tp-btn">Read More...</a></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- about-area-end -->
+
+
+      <!-- product area -->
+      <div class="shop-area pt-120 pb-130">
+      <div class="container">
+         <div class="row mb-5">
+            <div class="col-lg-5 col-md-12 col-12">
+            <div class="tp-section">
+               <span class="tp-section__sub-title left-line mb-20"> Here's Our</span>
+               <h3 class="tp-section__title mb-30">Products </h3>
+            </div>
+            </div>
+            <div class="col-lg-7 col-md-12 col-12">
+               <div class="services-link text-md-start text-lg-end mb-30">
+                  <span><a href="{% url 'web:products' %}">View All Product<i class="fa-solid fa-arrow-right"></i></a></span>
+               </div>
+            </div>
+         </div>
+         <div class="">
+         <div class="product_ owl-carousel">
+            <div class="tpshopitem mb-50" data-wow-delay=".2s">
+               <div class="tpshopitem__thumb p-relative fix mb-35">
+                  <a href="#"
+                  ><img src="{% static 'assets/img/home/product.png' %}" alt="shop-thumb"/></a>
+               </div>
+               <div class="tpshopitem__content text-center">
+                  <span class="tpshopitem__title mb-5"
+                  ><a href="#">Blood Agar5% SB (Plate)</a></span>
+                  <p>1X20(Pack)</p>
+                  <div class="tpshopitem__review">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  </div>
+               </div>
+            </div>
+            <div class="tpshopitem mb-50" data-wow-delay=".2s">
+               <div class="tpshopitem__thumb p-relative fix mb-35">
+                  <a href="#"
+                  ><img src="{% static 'assets/img/home/product.png' %}" alt="shop-thumb"/></a>
+               </div>
+               <div class="tpshopitem__content text-center">
+                  <span class="tpshopitem__title mb-5"
+                  ><a href="#">Chocolate Agar(Plate)</a></span
+                  >
+                  <p>1X20(Pack)</p>
+                  <div class="tpshopitem__review">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  </div>
+               </div>
+            </div>
+            <div class="tpshopitem mb-50" data-wow-delay=".2s">
+               <div class="tpshopitem__thumb p-relative fix mb-35">
+                  <a href="#"
+                  ><img src="{% static 'assets/img/home/product.png'%}" alt="shop-thumb"
+                  /></a>
+               </div>
+               <div class="tpshopitem__content text-center">
+                  <span class="tpshopitem__title mb-5"
+                  ><a href="#">C.L.E.D. AGAR (Plate)</a></span
+                  >
+                  <p>1X20(Pack)</p>
+                  <div class="tpshopitem__review">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  </div>
+               </div>
+            </div>
+            <div class="tpshopitem mb-50" data-wow-delay=".2s">
+               <div class="tpshopitem__thumb p-relative fix mb-35">
+                  <a href="#"
+                  ><img src="{% static 'assets/img/home/product.png' %}" alt="shop-thumb" /></a>
+               </div>
+               <div class="tpshopitem__content text-center">
+                  <span class="tpshopitem__title mb-5"
+                  ><a href="#">Brucella Agar 5% SB Hemin Vit K1 (Plate)</a></span
+                  >
+                  <p>1X20(Pack)</p>
+                  <div class="tpshopitem__review">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  </div>
+               </div>
+            </div>
+            <div class="tpshopitem mb-50" data-wow-delay=".2s">
+               <div class="tpshopitem__thumb p-relative fix mb-35">
+                  <a href="#"
+                  ><img src="{% static 'assets/img/home/product.png'%}" alt="shop-thumb"
+                  /></a>
+               </div>
+               <div class="tpshopitem__content text-center">
+                  <span class="tpshopitem__title mb-5"
+                  ><a href="#">MACCONKEY AGAR (Plate)</a></span
+                  >
+                  <p>1X20(Pack)</p>
+                  <div class="tpshopitem__review">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  </div>
+               </div>
+            </div>
+            <div class="tpshopitem mb-50" data-wow-delay=".2s">
+               <div class="tpshopitem__thumb p-relative fix mb-35">
+                  <a href="#"
+                  ><img src="{% static 'assets/img/home/product.png'%}" alt= "shop-thumb"
+                  /></a>
+               </div>
+               <div class="tpshopitem__content text-center">
+                  <span class="tpshopitem__title mb-5"
+                  ><a href="#">MULLER HINTON AGAR (Plate)</a></span
+                  >
+                  <p>1X20(Pack)</p>
+                  <div class="tpshopitem__review">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  </div>
+               </div>
+            </div>
+            </div>
+         </div>
+      </div>
+      </div>
+      <!-- product-area-end -->
+
+       
+
+         <!-- counter-area -->
+         <section class="counter-area pt-70 pb-80">
+            <div class="container">
+               <div class="row mb-5">
+                  <div class="col-12">
+                     <div class="tp-section">
+                        <!-- <span class="tp-section__sub-title left-line mb-20">At Glance</span> -->
+                        <h3 class="tp-section__title mb-30">LifeScience At a Glance....</h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-xl-3 col-md-6">
+                     <div class="counter__item">
+                        <div class="counter__icon mb-15">
+                        </div>
+                        <div class="counter__content">
+                           <h4 class="counter__title"><span class="">1500+</span></h4>
+                           <h5>Animal Free & Media bases</h5>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-md-6">
+                     <div class="counter__item">
+                        <div class="counter__icon mb-15">
+                        </div>
+                        <div class="counter__content">
+                           <h4 class="counter__title"><span class="">20+</span></h4>
+                           <h5>ready prepared plates
+                              per year</h5>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-md-6">
+                     <div class="counter__item">
+                        <div class="counter__icon mb-15">
+                        </div>
+                        <div class="counter__content">
+                           <h4 class="counter__title"><span class="">800+</span></h4>
+                           <h5>Antimicrobial susceptibility
+                              </h5>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-md-6">
+                     <div class="counter__item">
+                        <div class="counter__icon mb-15">
+                        </div>
+                        <div class="counter__content">
+                           <h4 class="counter__title"><span class="">1500+</span></h4>
+                           <h5>Animal Free & Media bases</h5>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- counter-area-end -->  
+
+
+         <!-- services-area -->
+         <section class="services-area pt-120 pb-105 grey-bg" data-background="assets/img/shape/shape-bg-01.png">
+            <div class="container">
+               <div class="row align-items-end  mb-45">
+                  <div class="col-lg-5 col-md-12 col-12">
+                     <div class="tp-section">
+                        <span class="tp-section__sub-title left-line mb-20">Industries</span>
+                        <h3 class="tp-section__title mb-30">We Serve</h3>
+                     </div>
+                  </div>
+                  <div class="col-lg-7 col-md-12 col-12">
+                     
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-lg-4 col-md-6 col-12">
+                     <div class="services-thumb-box mb-30 wow fadeInLeft" data-wow-delay=".3s">
+                        <div class="services-thumb-box__thumb fix fix">
+                           <img src="{% static 'assets/img/home/hospitality.jpg' %}" alt="services-thumb" class="img-fluid w-100">
+                        </div>
+                        <div class="services-thumb-box__text-area d-flex align-items-center">
+                           <div class="services-thumb-box__icon mr-20">
+                              <i class="flaticon-hemoglobin-test-meter"></i>
+                           </div>
+                           <div class="services-thumb-box__content">
+                              <h5 class="services-thumb-box__title"><a href="#">Hospitality</a></h5>
+                              <a class="tp-btn-link" href="#">Read More</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-12">
+                     <div class="services-thumb-box pink-round mb-30 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="services-thumb-box__thumb fix">
+                           <img src="{% static 'assets/img/home/pharma.jpg'%}"class="img-fluid w-100" alt="services-thumb">
+                        </div>
+                        <div class="services-thumb-box__text-area d-flex align-items-center">
+                           <div class="services-thumb-box__icon mr-20">
+                              <i class="flaticon-blood-test"></i>
+                           </div>
+                           <div class="services-thumb-box__content">
+                              <h5 class="services-thumb-box__title"><a href="#">Pharmaceuticals</a></h5>
+                              <a class="tp-btn-link" href="#">Read More</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-12">
+                     <div class="services-thumb-box sky-round mb-30 wow fadeInRight" data-wow-delay=".3s">
+                        <div class="services-thumb-box__thumb fix">
+                           <img src="{% static 'assets/img/home/hospital.jpg' %}" class="img-fluid w-100" alt="services-thumb">
+                        </div>
+                        <div class="services-thumb-box__text-area d-flex align-items-center">
+                           <div class="services-thumb-box__icon mr-20">
+                              <i class="flaticon-biochemistry"></i>
+                           </div>
+                           <div class="services-thumb-box__content">
+                              <h5 class="services-thumb-box__title"><a href="#">Hospitals</a></h5>
+                              <a class="tp-btn-link" href="#">Read More</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- services-area-end -->
+        
+
+         <!-- team-area -->
+         <section class="team-area pt-170 pb-120">
+            <div class="container">
+               <div class="p-relative">
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div class="tp-section text-center">
+                           <span class="tp-section__sub-title left-line right-line mb-25">Here are OUR</span>
+                           <h3 class="tp-section__title mb-70">Top Clients</h3>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="swiper-container team-active">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                           <div class="tp-team mb-50">
+                              <div class="tp-team__thumb fix">
+                                 <a href="#"><img src="{% static 'assets/img/team/team-thumb-02.jpg' %}" alt="team-thumb"></a>
+                              </div>
+                              <div class="tp-team__content">
+                                 <h4 class="tp-team__title mb-15"><a href="{% url 'web:teams' %}">Cameron Williamson</a></h4>
+                                 <span class="tp-team__position mb-30">Genetic Specialist</span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="tp-team mb-50">
+                              <div class="tp-team__thumb fix">
+                                 <a href="team-details.html"><img src="{% static 'assets/img/team/team-thumb-02.jpg' %}" alt="team-thumb"></a>
+                              </div>
+                              <div class="tp-team__content">
+                                 <h4 class="tp-team__title mb-15"><a href="{% url 'web:teams' %}">Savannah Nguyen</a></h4>
+                                 <span class="tp-team__position mb-30">Neuro Specialist</span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="tp-team mb-50">
+                              <div class="tp-team__thumb fix">
+                                 <a href="team-details.html"><img src="{% static 'assets/img/team/team-thumb-03.jpg' %}" alt="team-thumb"></a>
+                              </div>
+                              <div class="tp-team__content">
+                                 <h4 class="tp-team__title mb-15"><a href="{% url 'web:teams' %}">Darlene Robertson</a></h4>
+                                 <span class="tp-team__position mb-30">gynecology Specialist</span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="tp-team mb-50">
+                              <div class="tp-team__thumb fix">
+                                 <a href="{% url 'web:teams' %}"><img src="{% static 'assets/img/team/team-thumb-04.jpg' %}" alt="team-thumb"></a>
+                              </div>
+                              <div class="tp-team__content">
+                                 <h4 class="tp-team__title mb-15"><a href="{% url 'web:teams' %}">Jhon Methweu</a></h4>
+                                 <span class="tp-team__position mb-30">Pediatric Specialist</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- team-area-end -->
+      </main>
+      <!-- main-area-end -->
+      {% endblock %}
+       <!-- footer-area -->
+       <footer>
+         <div class="footer-area tp-footer-white-content theme-bg pt-95">
+            <div class="tp-footer-top pb-25">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="tp-footer-widget footer-2-col-1 mb-20 wow fadeInUp" data-wow-delay=".2s">
+                           <div style="background-color: azure;border-radius: 15px;" class="tp-footer-widget__content mb-25 ">
+                             <img src="{% static 'assets/img/logo/logo.png' %}" alt="logo" class="img-fluid">
+                           </div>
+                           <div class="tp-footer-widget__sub-sec">
+                              <span class="tp-footer-widget__sub-title mb-5">About LifeScience</span>
+                              <p>Founded in 2018, our Microbiology Lab embarked on a journey driven by a commitment to scientific advancement. With a vision to cater to the evolving needs of the biosciences field, we established ourselves as a premier hub for crafting high-quality media plates. Our primary goals encompass facilitating diverse microbial studies, fostering breakthrough research, and contributing to the broader scientific community's knowledge..</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="tp-footer-widget footer-2-col-2 mb-40 wow fadeInUp" data-wow-delay=".4s">
+                           <span class="tp-footer-widget__title mb-15">Useful links</span>
+                           <div class="tp-footer-widget__links mb-35">
+                              <ul>
+                                 <li><a href="{% url 'web:index' %}">Home</a></li>
+                                 <li><a href="{% url 'web:about' %}">About us</a></li>
+                                 <li><a href="{% url 'web:products' %}">products</a></li>
+                                 <li><a href="{% url 'web:contact' %}">Contact Us</a></li>
+                                 <li><a href="#">Services</a></li>
+
+                                 <li><a href="{% url 'admin:index' %}">Admin Area</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-2 col-lg-2 col-md-6">
+                        <div class="tp-footer-widget footer-2-col-3 mb-40 wow fadeInUp" data-wow-delay=".6s">
+                           <span class="tp-footer-widget__title mb-15">Customer Service</span>
+                           <div class="tp-footer-widget__links">
+                              <ul>
+                                 <li><a href="#">Privacy</a></li>
+                                 <li><a href="#">Policy</a></li>
+                                 <li><a href="#">Support</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="tp-footer-widget footer-2-col-4 mb-40 wow fadeInUp" data-wow-delay=".8s">
+                           <span class="tp-footer-widget__title mb-15">Contact Info</span>
+                           <div class="tp-footer-widget__links mb-120">
+                              <ul>
+                                 <li> 4th Floor, Plot No-3, Rishi Kunj
+                                    Kirti Nagar, Sec-15 Part 1
+                                    Gurugram Haryana, 122001</li>
+                                 <!-- <li><a href="tel:(+880)15569569365">(+880)155 69569 365</a></li> -->
+                                 <li><a href="mailto:info@lifesciencemedia.in">Mail Us at : info@lifesciencemedia.in</a></li>
+                              </ul>
+                           </div>
+                           <div class="tp-footer-widget__social fw-social">
+                              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                              <a href="#"><i class="fa-light fa-basketball"></i></a>
+                              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="footer-area-bottom fw-border">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                        <div class="footer-widget__copyright copyright-white">
+                           <span> © Copyright ©2022 <a href="{% url 'web:index' %}""></a>. <i>All Rights Reserved Copyright</i></span>
+                        </div>
+                     </div> 
+                     <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                        <div class="footer-widget__copyright-info info-direction">
+                           <ul class="d-flex align-items-center">
+                              <li><a href="#">Terms and conditions</a></li>
+                              <li><a href="#">Privacy policy</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+
+
+
+
+      <!-- footer-area-end -->
+
+
+
+
+      <!-- JS here -->
+
+      <script src="{% static 'assets/js/jquery.js' %}"></script>
+      <script src="{% static 'assets/js/waypoints.js' %}"></script>
+      <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'assets/js/swiper-bundle.js' %}"></script>
+      <script src="{% static 'assets/js/slick.js' %}"></script>
+      <script src="{% static 'assets/js/magnific-popup.js' %}"></script>
+      <script src="{% static 'assets/js/counterup.js' %}"></script>
+      <script src="{% static 'assets/js/wow.js' %}"></script>
+      <script src="{% static 'assets/js/isotope-pkgd.js' %}"></script>
+      <script src="{% static 'assets/js/imagesloaded-pkgd.js' %}"></script>
+      <script src="{% static 'assets/js/ajax-form.js' %}"></script>
+      <script src="{% static 'assets/js/aos.js' %}"></script>
+      <script src="{% static 'assets/js/meanmenu.js' %}"></script>
+      <script src="{% static 'assets/js/nice-select.js' %}"></script>
+      <script src="{% static 'assets/js/jquery.appear.js' %}"></script>
+      <script src="{% static 'assets/js/jquery.knob.js' %}"></script>
+      <script src="{% static 'assets/js/main.js' %}"></script>
+ 
+ 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+   </body>
+</html>

@@ -1,0 +1,236 @@
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'assets/pdf_css/pdf_css.css' %}">
+    <script src="{% static 'assets/js_libs/jquery.min.js' %}"></script>
+    <link rel="stylesheet" href="{%static 'assets/css/font-awesome-pro.css' %}">    
+    <title>   {{title}} || View PDF</title>
+    
+</head>
+<body>
+    <button type="submit" class="qc-btn">
+        <i style="padding-right: 10px;" class="fa fa-download" aria-hidden="true"></i>                                         
+        <span style="font-family: Open Sans; font-weight: bold;font-size: 14px;"> Save As PDF</span>
+    </button>
+
+    <section id="invoice-qc" class="main-body">  
+          <img  class="img-logo" src="{% static 'assets/pdf_images/lifescience.png' %}" width="250px",>
+            <div class="header-top">         
+            <span>
+            <h3>Quality Control Certificate</h3>
+        </span>
+    </div>
+    <!--name of the certificate -->
+
+    <div class="name-certificate">
+        <span>
+            <h3 style="font-size: 24px;">
+                MUELLER HINTON AGAR
+            </h3>
+        </span>
+    </div>
+    
+    
+    {% for data in qc_data%}
+    
+
+    
+    <!--Table for the info-->
+
+    <table class="info-wrapper">
+        <tr >
+            <td style="padding-bottom:10px;"><p style="font-size: 16px;"><span style="padding-right: 20px;">Material Code</span> : <span style="padding-left: 40px;">{{data.Material_code}}</span> </p></td> 
+            </tr>
+            <tr>
+
+                <td style="padding-bottom:10px;"><p style="font-size: 16px;"><span style="padding-right: 62px;">Lot. No.</span> : <span style="padding-left: 40px;">{{data.Lot_No}}</span> </p></td> 
+        
+           </tr>
+        <tr>    
+        <td style="padding-bottom:10px;">
+            <p style="font-size: 16px;"><span style="padding-right: 48px;">Mfg. Date</span> : <span style="padding-left: 40px;">{{data.mfg_date}}</span> </p>
+            </td>
+    </tr>
+        <td style="padding-bottom:10px;">
+            <p style="font-size: 16px;"><span style="padding-right: 35px;">Expiry Date</span> : <span style="padding-left: 40px;">{{data.Expiry_date}}</span> </p>
+            
+        </td>
+     </tr>
+    </table>
+
+
+    <!--Table for the main data-->
+
+   <div class="table-wrapper"> 
+    <table class="main-info-table" cellspacing="0" border="1" >
+        <tr>
+            <th style="padding: 20px;">Pre-plated Medium/20 dishes</th>
+            <th style="padding: 20px;">Results</th>
+            <th>Theoretical Results</th>
+
+        </tr>
+        <tr>
+            <td  style="padding: 5px;">Appearance </td>
+            <td style="padding: 10px;">{{data.Appearance}}</td>
+            <td style="padding: 5px;">Conformity / Specifications</td>
+        </tr>
+
+        <tr>
+            <td style="padding: 5px;">Colour   </td>
+            <td style="padding: 10px;">{{data.color}}</td>
+            <td style="padding: 5px;">Pale Yellow</td>
+
+        </tr>
+
+        <tr>
+            <td style="padding: 5px;">pH </td>
+            <td style="padding: 10px;">{{data.pH_value}}</td>
+            <td style="padding: 5px;">7.3 +/-0.1</td>
+
+        </tr>
+        <tr>
+            <td style="padding: 5px;">Microbiological activity  </td>
+            <td style="padding: 5px;">{{data.micro_biology_activity_res}}° C</td>
+            <td style="padding: 5px;"> Incubation 24 hours at 33-37° C</td>
+
+        </tr>
+
+
+        <tr>
+            <td style="padding: 5px;">
+                <span ><p style="font-weight: bold;font-size: 16px;">Microbiological state</p><p style="font: 14px;">Thickness/In process Control</p></span>
+                
+            </td>
+
+
+            <td style="padding: 5px;">
+              {{data.Microbiological_state}}
+            </td>
+        
+            <td style="padding: 5px;">
+            </td>
+        
+        </tr>
+<tr>
+    <td style="padding: 5px;">
+        <span><p style="font-weight: bold;font-size: 16px;">Escherichia coli ATCC 25922</p><p>Ampicillin 10 ug</p></span>
+    </td>
+    <td style="padding: 5px;">{{data.Ampicillin_10_ug_zone_size}}</td>
+    <td style="padding: 5px;">
+        16-22 mm
+    </td>
+</tr>
+<tr>
+
+    <td style="padding: 5px;">
+        <span><p style="font-weight: bold;font-size: 16px;">Staphylococcus aureus ATCC 29213</p><p>Linezolid 10μg</p></span>
+    </td>
+    <td style="padding: 5px;">{{data.Linezolid_10μg_zone_size}} </td>
+    <td style="padding: 5px;">21-27 mm</td>
+    </tr>
+
+    <tr>
+
+        <td style="padding: 5px;">
+            <span><p style="font-weight: bold;font-size: 16px;">Pseudomonas aeruginosa ATCC 27853</p><p>Ciprofloxacin 15μg</p></span>
+        </td>
+        <td style="padding: 5px;">{{data.Ciprofloxacin_15μg_zone_size}}</td>
+    <td style="padding: 5px;">25-33 mm</td>
+         </tr>
+<tr>
+    <td style="padding: 5px;">
+        <span><p style="font-weight: bold;font-size: 16px;">Enterococcus faecalis ATCC 29212</p><p>Trimethoprim sulfamethoxazole 1.25/23.μg</p><p>Vancomycin 5μg</p></span>
+    </td>
+    <td style="padding: 5px;">
+        <span>{{data.Trimethoprim_sulfamethoxazole_125_23_μg_zone_size}} <br>{{data.Vancomycin_5μg_zone_size}}</span>
+    </td>
+    <td style="padding: 5px;">
+        <span>15-21 mm <br>26-34 mm</span>
+    </td>
+</tr>
+</table>
+</div>
+{%endfor%}
+
+    <div class="sign-head">
+    <img src="{% static 'assets/pdf_images/pngwing.com.png' %}" width="150">
+    <h3>Signature of Quality Head</h3>
+    
+</div>
+
+    <hr style=" height:2px;border-width:0;color:gray;background-color:gray">
+    <div class="footer-area">
+        <span>
+            <h4 style="font-size: 24px;">LIFE SCIENCE MEDIA</h4>
+        </span>
+    <span class="foooter-1">
+        
+         <p>
+            Plot No – 3, 4th Floor, Rishi Kunj, Kirti Nagar, GURGAON , HR- 122007
+            <br>
+            <span style="padding-top: 10px;">
+                Tel: 9958007455, 9560098618 
+                Email : <a  href="info@lifesciencemedia.in">info@lifesciencemedia.in</a> 
+          
+            </span>
+            </p>
+    </span>
+    </div>
+</section>
+
+
+<script src="{% static 'assets/js_libs/jspdf.debug.js' %}"></script>
+<script src="{% static 'assets/js_libs/html2canvas.min.js' %}"></script>
+<script src="{% static 'assets/js_libs/html2pdf.min.js' %}"></script>
+
+
+<script>
+
+    const options = {
+      margin: 0.5,
+      filename: 'qc-report.pdf',
+      image: { 
+        type: 'jpeg', 
+        quality: 500
+      },
+      html2canvas: { 
+        scale: 1 
+      },
+      jsPDF: { 
+        unit: 'in', 
+        format: 'letter', 
+        orientation: 'portrait' 
+      }
+    }
+    
+    $('.qc-btn').click(function(e){
+      e.preventDefault();
+      const element = document.getElementById('invoice-qc');
+      html2pdf().from(element).set(options).save();
+    });
+
+
+    function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+
+
+
+
+
+    </script>
+
+
+</body>
+</html> 
