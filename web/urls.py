@@ -17,7 +17,7 @@ urlpatterns=[
     path('qc_search/',views.search_qc,name='qc_search'),
     path('pdf/',views.pdf_temp,name='pdf_temp'),
     path('pdf_download/<str:arg>',views.pdf_download,name="pdf_download"),
-    path('pdf_view/', views.render_pdf_view, name="pdf_view"),
-    path('pdf_download/', views.DownloadPDF.as_view(), name="pdf_download"),
+  #  path('pdf_view/', views.render_pdf_view, name="pdf_view"),
+   # path('pdf_download/', views.DownloadPDF.as_view(), name="pdf_download"),
 
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
