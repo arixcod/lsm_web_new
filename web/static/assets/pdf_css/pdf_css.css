@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -6,23 +5,17 @@
 *{
     padding: 0;
     margin: 0; 
-    font-family: 'Poppins',Arial, Helvetica, sans-serif;   
     scroll-behavior: smooth;
 }
 
 
-body { box-sizing: border-box;  margin: 0 auto;  padding: 0.5in; }
 
-table {    -pdf-keep-in-frame-mode: shrink;}
-.img-logo{
-    padding-left: 50px;
-    margin-top: 10px;
-}
+table {-pdf-keep-in-frame-mode: shrink;}
+
 
 .header-top{
     display: flex;
-    justify-content: center;
-    
+    justify-content: center;    
 }
 
 .qc-btn{
@@ -31,15 +24,14 @@ table {    -pdf-keep-in-frame-mode: shrink;}
         color: antiquewhite;
         padding: 8px;
         border-radius: 8px;
-        font-family: 'Open Sans';
         cursor: pointer;
         margin: 0 auto;
     }
-.header-top>span>h3{
+.header-top >.qc-main-header{
     border: black solid 1px;
     padding: 10px;
     border-radius: 10px;
-    font-size: 30px;
+    font-size: 16px;
     /* box-shadow: 10px 10px;
     */
     font-weight: bolder;
@@ -76,7 +68,6 @@ table {    -pdf-keep-in-frame-mode: shrink;}
 }
 .sign-head{
     margin-top: 30px;
-    position: relative;
     left: 600px;
     padding-left:120px;
 }
@@ -90,14 +81,25 @@ table {    -pdf-keep-in-frame-mode: shrink;}
 
 
 
-/* 
-
 @media print {
     * { -webkit-print-color-adjust: exact; }
-    html { background: none; padding: 0; }
-    body {  margin: 0; }
-    span:empty { display: none; }
-    .add, .cut { display: none; }
-}
+         html { background: none; padding: 0; }
+         body {  margin: 0; }
+         span:empty { display: none; }
+        .add, .cut { display: none; }
+        .main-body{
+            padding: 0;
+            margin: 0;
+        }
 
-@page { margin: 0; } */
+
+        .header-qc-topic{
+            -webkit-filter: drop-shadow(4px 4px 1px #ccc);
+            text-shadow: 4px 4px 1px #ccc;
+         
+        }
+    }
+
+@page { margin: 0;padding: 0; } 
+
+

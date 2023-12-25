@@ -7,56 +7,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'assets/pdf_css/pdf_css.css' %}">
     <script src="{% static 'assets/js_libs/jquery.min.js' %}"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{%static 'assets/css/font-awesome-pro.css' %}">    
     <title>   {{title}} || View PDF</title>
+        <style>
+
+
+    .watermark{
     
+    content: "";
+    display: block;
+    width: 550px;
+    height: 150px;
+    position: absolute;
+    top:450px;
+    left:100px;
+     background-position: 30px 30px;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    transform: rotate(-30deg);
+ }
+       
+       </style>
 </head>
-<body>
-    <button type="submit" class="qc-btn">
+<body style="font-family: 'Montserrat';">
+    <button type="submit" style="position: absolute;right: 100px;top: 20px;" class="qc-btn">
         <i style="padding-right: 10px;" class="fa fa-download" aria-hidden="true"></i>                                         
-        <span style="font-family: Open Sans; font-weight: bold;font-size: 14px;"> Save As PDF</span>
+        <span style="font-family: 'Montserrat'; font-weight: bold;font-size: 14px;"> Save As PDF</span>
     </button>
 
-    <section id="invoice-qc" class="main-body">  
-          <img  class="img-logo" src="{% static 'assets/pdf_images/lifescience.png' %}" width="250px",>
-            <div class="header-top">         
-            <span>
-            <h3>Quality Control Certificate</h3>
+    <section style="margin: 0;padding: 0;box-sizing: border-box;" id="invoice-qc" class="main-body">  
+
+          <img width="250px";  
+          
+          
+          src="{% static 'assets/pdf_images/lifescience.png' %}" >
+            
+          <div style="margin-top: 15px;" class="header-top">         
+         
+         
+         <span class="header-qc-topic" style=" border: black solid 1px;
+                padding: 8px;
+                border-radius: 5px;
+                font-size: 18px;
+                font-weight: 700;font-family: 'Montserrat';
+                
+
+
+">
+            Quality Control Certificate
         </span>
     </div>
     <!--name of the certificate -->
 
     <div class="name-certificate">
         <span>
-            <h3 style="font-size: 24px;">
+            <h3 style="font-size: 18px;font-family:'Montserrat' , sans-serif;font-weight: 900;">
                 MUELLER HINTON AGAR
             </h3>
         </span>
     </div>
-    
     
     {% for data in qc_data%}
     
 
     
     <!--Table for the info-->
-
     <table class="info-wrapper">
+
         <tr >
-            <td style="padding-bottom:10px;"><p style="font-size: 16px;"><span style="padding-right: 20px;">Material Code</span> : <span style="padding-left: 40px;">{{data.Material_code}}</span> </p></td> 
+            <td style="padding-bottom:10px;"><p style="font-size: 14px;"><span style="padding-right: 20px;">Material Code</span> : <span style="padding-left: 40px;">{{data.Material_code}}</span> </p></td> 
             </tr>
             <tr>
 
-                <td style="padding-bottom:10px;"><p style="font-size: 16px;"><span style="padding-right: 62px;">Lot. No.</span> : <span style="padding-left: 40px;">{{data.Lot_No}}</span> </p></td> 
+                <td style="padding-bottom:10px;"><p style="font-size: 14px;"><span style="padding-right: 62px;">Lot. No.</span> : <span style="padding-left: 40px;">{{data.Lot_No}}</span> </p></td> 
         
            </tr>
         <tr>    
         <td style="padding-bottom:10px;">
-            <p style="font-size: 16px;"><span style="padding-right: 48px;">Mfg. Date</span> : <span style="padding-left: 40px;">{{data.mfg_date}}</span> </p>
+            <p style="font-size: 14px;"><span style="padding-right: 48px;">Mfg. Date</span> : <span style="padding-left: 40px;">{{data.mfg_date|date:"d-m-Y"}}</span> </p>
             </td>
     </tr>
         <td style="padding-bottom:10px;">
-            <p style="font-size: 16px;"><span style="padding-right: 35px;">Expiry Date</span> : <span style="padding-left: 40px;">{{data.Expiry_date}}</span> </p>
+            <p style="font-size: 14px;"><span style="padding-right: 35px;">Expiry Date</span> : <span style="padding-left: 40px;">{{data.Expiry_date|date:"d-m-Y"}}</span> </p>
             
         </td>
      </tr>
@@ -65,34 +100,43 @@
 
     <!--Table for the main data-->
 
-   <div class="table-wrapper"> 
+   <div style="margin-top: 20px;" class="table-wrapper"> 
+
+    <img
+          
+    position: relative;
+    class="watermark"
+    
+    src="{% static 'assets/pdf_images/lifescience.png' %}" >
+    
+   
     <table class="main-info-table" cellspacing="0" border="1" >
         <tr>
-            <th style="padding: 20px;">Pre-plated Medium/20 dishes</th>
-            <th style="padding: 20px;">Results</th>
+            <th style="padding: 8px;">Pre-plated Medium/20 dishes</th>
+            <th style="padding: 8px;">Results</th>
             <th>Theoretical Results</th>
 
         </tr>
-        <tr>
+        <tr style="font-size: 14px;">
             <td  style="padding: 5px;">Appearance </td>
-            <td style="padding: 10px;">{{data.Appearance}}</td>
+            <td style="padding: 5px;">{{data.Appearance}}</td>
             <td style="padding: 5px;">Conformity / Specifications</td>
         </tr>
 
-        <tr>
+        <tr style="font-size: 14px;">
             <td style="padding: 5px;">Colour   </td>
             <td style="padding: 10px;">{{data.color}}</td>
             <td style="padding: 5px;">Pale Yellow</td>
 
         </tr>
 
-        <tr>
+        <tr style="font-size: 14px;">
             <td style="padding: 5px;">pH </td>
             <td style="padding: 10px;">{{data.pH_value}}</td>
             <td style="padding: 5px;">7.3 +/-0.1</td>
 
         </tr>
-        <tr>
+        <tr style="font-size: 14px;"> 
             <td style="padding: 5px;">Microbiological activity  </td>
             <td style="padding: 5px;">{{data.micro_biology_activity_res}}° C</td>
             <td style="padding: 5px;"> Incubation 24 hours at 33-37° C</td>
@@ -102,12 +146,12 @@
 
         <tr>
             <td style="padding: 5px;">
-                <span ><p style="font-weight: bold;font-size: 16px;">Microbiological state</p><p style="font: 14px;">Thickness/In process Control</p></span>
+                <span ><p style="font-weight: bold;font-size: 14px;">Microbiological state</p><p style="font-size: 12px;font-style: italic;">Thickness/In process Control</p></span>
                 
             </td>
 
 
-            <td style="padding: 5px;">
+            <td style="padding: 5px; font-size: 14px;">
               {{data.Microbiological_state}}
             </td>
         
@@ -117,38 +161,38 @@
         </tr>
 <tr>
     <td style="padding: 5px;">
-        <span><p style="font-weight: bold;font-size: 16px;">Escherichia coli ATCC 25922</p><p>Ampicillin 10 ug</p></span>
+        <span><p style="font-weight: bold;font-size: 14px;">Escherichia coli ATCC 25922</p><p style="font-style: italic;font-size: 12px;">Ampicillin 10 ug</p></span>
     </td>
-    <td style="padding: 5px;">{{data.Ampicillin_10_ug_zone_size}}</td>
-    <td style="padding: 5px;">
+    <td style="padding: 5px;font-size: 14px;">{{data.Ampicillin_10_ug_zone_size}}</td>
+    <td style="padding: 5px;font-size: 14px;">
         16-22 mm
     </td>
 </tr>
 <tr>
 
     <td style="padding: 5px;">
-        <span><p style="font-weight: bold;font-size: 16px;">Staphylococcus aureus ATCC 29213</p><p>Linezolid 10μg</p></span>
+        <span><p style="font-weight: bold;font-size: 14px;">Staphylococcus aureus ATCC 29213</p><p style="font-style: italic;font-size: 12px;">Linezolid 10μg</p></span>
     </td>
-    <td style="padding: 5px;">{{data.Linezolid_10μg_zone_size}} </td>
-    <td style="padding: 5px;">21-27 mm</td>
+    <td style="padding: 5px;font-size: 14px;">{{data.Linezolid_10μg_zone_size}} </td>
+    <td style="padding: 5px;font-size: 14px">21-27 mm</td>
     </tr>
 
     <tr>
 
         <td style="padding: 5px;">
-            <span><p style="font-weight: bold;font-size: 16px;">Pseudomonas aeruginosa ATCC 27853</p><p>Ciprofloxacin 15μg</p></span>
+            <span><p style="font-weight: bold;font-size: 14px;">Pseudomonas aeruginosa ATCC 27853</p><p style="font-style: italic;font-size: 12px;">Ciprofloxacin 15μg</p></span>
         </td>
-        <td style="padding: 5px;">{{data.Ciprofloxacin_15μg_zone_size}}</td>
-    <td style="padding: 5px;">25-33 mm</td>
+        <td style="padding: 5px;font-size: 14px">{{data.Ciprofloxacin_15μg_zone_size}}</td>
+    <td style="padding: 5px;font-size: 14px">25-33 mm</td>
          </tr>
 <tr>
     <td style="padding: 5px;">
-        <span><p style="font-weight: bold;font-size: 16px;">Enterococcus faecalis ATCC 29212</p><p>Trimethoprim sulfamethoxazole 1.25/23.μg</p><p>Vancomycin 5μg</p></span>
+        <span><p style="font-weight: bold;font-size: 14px;">Enterococcus faecalis ATCC 29212</p><p style="font-style: italic;font-size: 12px;">Trimethoprim sulfamethoxazole 1.25/23.μg</p><p style="font-style: italic;font-size: 12px;">Vancomycin 5μg</p></span>
     </td>
-    <td style="padding: 5px;">
+    <td style="padding: 5px;font-size: 14px">
         <span>{{data.Trimethoprim_sulfamethoxazole_125_23_μg_zone_size}} <br>{{data.Vancomycin_5μg_zone_size}}</span>
     </td>
-    <td style="padding: 5px;">
+    <td style="padding: 5px;font-size: 14px">
         <span>15-21 mm <br>26-34 mm</span>
     </td>
 </tr>
@@ -156,20 +200,34 @@
 </div>
 {%endfor%}
 
-    <div class="sign-head">
-    <img src="{% static 'assets/pdf_images/pngwing.com.png' %}" width="150">
-    <h3>Signature of Quality Head</h3>
-    
+<div style="display: flex;justify-content: flex-start;flex-direction: column;align-items: end;
+    margin: 20px;
+    text-align:justify;
+    ">
+        
+    <img src="{% static 'assets/pdf_images/pngwing.com.png' %}" width="100px">    
+    <p style="font-size: 16px;font-weight: bolder;">Signature of Quality Head</p>
 </div>
 
-    <hr style=" height:2px;border-width:0;color:gray;background-color:gray">
+</div>
+
+<!-- 
+    
+<div class="sign-head">
+    <img src="{% static 'assets/pdf_images/pngwing.com.png' %}" width="150">
+    <p style="font-size: 18px;font-weight: bolder;">Signature of Quality Head</p> -->
+
+
+
+
+    <hr style="margin-top: 15px;  height:2px;border-width:0;color:gray;background-color:gray">
     <div class="footer-area">
         <span>
-            <h4 style="font-size: 24px;">LIFE SCIENCE MEDIA</h4>
+            <h4 style="font-size: 20px;font-weight: 900;">LIFE SCIENCE MEDIA</h4>
         </span>
     <span class="foooter-1">
         
-         <p>
+         <p style="font-size: 12px;  text-align:justify;">
             Plot No – 3, 4th Floor, Rishi Kunj, Kirti Nagar, GURGAON , HR- 122007
             <br>
             <span style="padding-top: 10px;">
